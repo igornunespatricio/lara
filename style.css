@@ -1,0 +1,469 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Wrapper da carta */
+.letter-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Efeito de papel */
+.letter-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 29px,
+            rgba(0, 0, 0, 0.05) 30px);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Header da carta */
+.letter-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.letter-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Conteúdo da carta */
+.letter-content {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    text-align: justify;
+    position: relative;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 1s ease-out forwards;
+}
+
+.letter-content p:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.letter-content p:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.letter-content p:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.letter-content p:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.letter-content p:nth-child(5) {
+    animation-delay: 0.9s;
+}
+
+.letter-content p:nth-child(6) {
+    animation-delay: 1.1s;
+}
+
+.letter-content p:nth-child(7) {
+    animation-delay: 1.3s;
+}
+
+.opening {
+    font-style: italic;
+    font-weight: 500;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+.closing {
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #e74c3c;
+    margin-top: 30px;
+}
+
+/* Footer da carta */
+.letter-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.heart-icon {
+    font-size: 2rem;
+    color: #e74c3c;
+    animation: heartbeat 2s infinite;
+    display: inline-block;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .letter-wrapper {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    .letter-header h1 {
+        font-size: 2rem;
+    }
+
+    .letter-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .heart-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .letter-wrapper {
+        padding: 25px 15px;
+    }
+
+    .letter-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .letter-content {
+        font-size: 0.95rem;
+    }
+
+    .closing {
+        font-size: 1.1rem;
+    }
+}
+
+/* Efeitos hover sutis */
+.letter-wrapper:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Galeria de Memórias */
+.gallery-section {
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.gallery-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.gallery-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 250px;
+    background: #f8f9fa;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: sepia(0.1) saturate(1.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: sepia(0.2) saturate(1.5);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-icon {
+    font-size: 3rem;
+    color: rgba(231, 76, 60, 0.8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: heartbeat 2s infinite;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Animações específicas da galeria */
+@keyframes gallerySlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-item {
+    animation: gallerySlideIn 0.6s ease-out;
+}
+
+.gallery-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.gallery-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.gallery-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.gallery-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.gallery-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.gallery-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* Responsividade da galeria */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 180px;
+    }
+
+    .gallery-title h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .lightbox-close {
+        top: -50px;
+        right: -10px;
+    }
+}
