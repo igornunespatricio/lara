@@ -78,47 +78,80 @@ if (letterWrapper) {
     });
 }
 
-// Galeria de Memórias - Lightbox
-const galleryItems = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxCaption = document.getElementById('lightbox-caption');
-const lightboxClose = document.querySelector('.lightbox-close');
+// Dados da Galeria de Memórias
+const galleryData = [
+    {
+        title: "Momentos Inesquecíveis",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+        title: "Nossos Sorrisos",
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+    },
+    {
+        title: "Alegria do Cotidiano",
+        description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+    },
+    {
+        title: "Instantes Especiais",
+        description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
+    },
+    {
+        title: "Compartilhando a Vida",
+        description: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae."
+    },
+    {
+        title: "Juntos Sempre",
+        description: "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+    }
+];
 
-// Abrir lightbox
+// Galeria de Memórias - Modal
+const galleryItems = document.querySelectorAll('.gallery-item');
+const modal = document.getElementById('imageModal');
+const modalImg = document.querySelector('.modal-img');
+const modalTitle = document.querySelector('.modal-title');
+const modalDescription = document.querySelector('.modal-description');
+const modalClose = document.querySelector('.modal-close');
+
+// Abrir modal
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
         const imgSrc = item.querySelector('img').src;
-        const imgAlt = item.querySelector('img').alt;
+        const index = parseInt(item.getAttribute('data-index'));
 
-        lightboxImg.src = imgSrc;
-        lightboxCaption.textContent = imgAlt;
-        lightbox.classList.add('active');
+        // Buscar dados correspondentes
+        const data = galleryData[index];
 
-        // Prevenir scroll do body quando lightbox estiver aberto
+        modalImg.src = imgSrc;
+        modalTitle.textContent = data.title;
+        modalDescription.textContent = data.description;
+        modal.classList.add('active');
+
+        // Permitir scroll interno no modal, mas evitar scroll da página
         document.body.style.overflow = 'hidden';
     });
 });
 
-// Fechar lightbox
-function closeLightbox() {
-    lightbox.classList.remove('active');
+// Fechar modal
+function closeModal() {
+    modal.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
-lightboxClose.addEventListener('click', closeLightbox);
+modalClose.addEventListener('click', closeModal);
 
-// Fechar ao clicar fora da imagem
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        closeLightbox();
+// Fechar ao clicar fora do conteúdo
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
     }
 });
 
 // Fechar com tecla ESC
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        closeLightbox();
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
     }
 });
 

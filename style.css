@@ -330,69 +330,136 @@ html {
     animation: heartbeat 2s infinite;
 }
 
-/* Lightbox */
-.lightbox {
+/* Modal Fixo */
+.modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 50px;
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-.lightbox.active {
+.modal.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-.lightbox-content {
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    animation: modalSlideIn 0.3s ease-out;
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
-.lightbox-close {
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
     position: absolute;
-    top: -40px;
-    right: 0;
-    font-size: 3rem;
-    color: white;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #666;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
+    background: none;
+    border: none;
+    transition: color 0.3s ease;
 }
 
-.lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.3);
+.modal-close:hover {
+    color: #e74c3c;
 }
 
-.lightbox-img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+.modal-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.lightbox-caption {
-    margin-top: 20px;
+.modal-info {
     text-align: center;
-    color: white;
+}
+
+.modal-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    opacity: 0.8;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.modal-description {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    text-align: justify;
+    margin: 0;
+}
+
+/* Responsividade do modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        max-width: 500px;
+    }
+
+    .modal-img {
+        max-height: 300px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 98%;
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .modal-img {
+        max-height: 250px;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;
+    }
+
+    .modal-description {
+        font-size: 0.95rem;
+    }
 }
 
 /* Animações específicas da galeria */
