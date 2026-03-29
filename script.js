@@ -130,6 +130,27 @@ galleryItems.forEach(item => {
 
         // Permitir scroll interno no modal, mas evitar scroll da página
         document.body.style.overflow = 'hidden';
+
+        // Ajustar posição do modal para ficar visível na viewport atual
+        const modalContent = document.querySelector('.modal-content');
+        const viewportHeight = window.innerHeight;
+        const modalHeight = modalContent.offsetHeight;
+        const scrollTop = window.pageYOffset;
+
+        // Posicionar o modal no centro da viewport visível
+        const topPosition = scrollTop + (viewportHeight / 2) - (modalHeight / 2);
+
+        // Garantir que o modal não fique muito alto ou muito baixo
+        const minTop = scrollTop + 50;
+        const maxTop = scrollTop + viewportHeight - modalHeight - 50;
+
+        let finalTop = Math.max(minTop, Math.min(maxTop, topPosition));
+
+        // Aplicar a posição calculada
+        modalContent.style.position = 'fixed';
+        modalContent.style.top = finalTop + 'px';
+        modalContent.style.left = '50%';
+        modalContent.style.transform = 'translateX(-50%)';
     });
 });
 
