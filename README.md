@@ -72,9 +72,23 @@ lara-site/
 4. **Acesse o site**
    - O site ficará disponível em: `http://nome-do-seu-bucket.s3-website-regiao.amazonaws.com`
 
+## 🖼️ Galeria de Memórias
+
+A galeria de memórias permite exibir imagens com títulos e descrições detalhadas:
+
+- **Modal Interativo:** Clique nas imagens para abrir um modal com título e texto
+- **Posicionamento Inteligente:** O modal aparece sempre na área visível da tela
+- **Scroll Interno:** Permite visualizar todo o conteúdo quando necessário
+- **Design Responsivo:** Funciona perfeitamente em todos os dispositivos
+
+### Como funciona
+1. Cada imagem tem um índice associado no HTML
+2. Os dados (título e descrição) são armazenados em um array JavaScript
+3. Ao clicar, o modal abre com o conteúdo correspondente
+4. O posicionamento é calculado dinamicamente baseado na viewport atual
+
 ## 🖼️ Futuras Expansões
 
-- Galeria de fotos com transições suaves
 - Ícones temáticos (corações, estrelas, etc.)
 - Música de fundo opcional
 - Efeitos de partículas ou confetes
