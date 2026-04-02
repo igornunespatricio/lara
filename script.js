@@ -81,28 +81,40 @@ if (letterWrapper) {
 // Dados da Galeria de Memórias
 const galleryData = [
     {
-        title: "Momentos Inesquecíveis",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        title: "Mimollete",
+        description: "A primeira vez que fomos ao Mimollete, olhando pra essa foto agora e vendo você linda, eu não imaginava o quão importante você seria pra mim."
     },
     {
-        title: "Nossos Sorrisos",
-        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+        title: "Passeios De Bike Elétrica",
+        description: "Eu amava esses passeios com você. Lembra quando eu te levava de manhã cedo pra Urca? Eram passeios simples, mas a sua presença fazia toda a diferença."
     },
     {
-        title: "Alegria do Cotidiano",
-        description: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        title: "Sua Formatura",
+        description: "Esse é um momento importante na sua vida, e assim como em tantos outros, eu faço questão de estar presente. Acredito que esses marcos fortalecem ainda mais a nossa relação. E que venham muitos outros momentos marcantes pra vivermos juntos."
     },
     {
-        title: "Instantes Especiais",
-        description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
+        title: "Ilha Grande",
+        description: "Você sabe o quanto eu gosto desse lugar, mas ele fica mil vezes melhor quando posso compartilhar com você."
     },
     {
-        title: "Compartilhando a Vida",
-        description: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae."
+        title: "Arraial - Primeira Baleia",
+        description: "Lembro da gente avistando as baleias do mirante, com binóculos e câmera. Eu poderia passar o dia inteiro fazendo isso com você sem me cansar. E depois ainda ir pro Fixi, só pra aproveitar uma tarde tranquila do seu lado. Sou muito grato por viver tudo isso com você."
     },
     {
-        title: "Juntos Sempre",
-        description: "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+        title: "Arraial - Whale Watching",
+        description: "E, como se não pudesse melhorar, foi indescritível ver as baleias de perto. O tamanho delas só não é maior do que a sua importância na minha vida. Espero que venham muitos outros momentos assim pra gente aproveitar juntos."
+    },
+    {
+        title: "Seu Primeiro Emprego",
+        description: "Esse é mais um marco. Eu lembro que, quando a moça te ligou oferecendo o trabalho, a gente se abraçou e começou a pular de alegria. Vendo essa foto agora me deixa emocionado e me faz lembrar o quão foda você é e o quanto eu tenho sorte de poder compartilhar esses momentos com você."
+    },
+    {
+        title: "Canadá",
+        description: "Nossa primeira viagem internacional juntos. Sem palavras pra descrever o que essa viagem significou pra mim. Ela foi simplesmente magnífica, extraordinária. Se eu pudesse, repetiria tudo de novo com você. A destilaria, o Parque Omega, ser acordado pelo uivo dos lobos… tudo isso e muito mais, sempre com você do meu lado."
+    },
+    {
+        title: "Canadá - Again",
+        description: "Mais uma vez, pra deixar registrado a importância dessa viagem com você na minha vida. Nesse dia, especificamente, estávamos apenas passeando pela cidade em direção ao jogo dos Leafs. Eu não achei que fosse ser um dia tão especial pra mim, mas o fato de poder passear com você pelas ruas, cada um com seu pumpkin spice, a experiência de comprar as camisas, assistir ao jogo e voltar de madrugada passeando fez desse um dos dias mais marcantes da minha vida. E eu agradeço muito por ter sido com você."
     }
 ];
 
